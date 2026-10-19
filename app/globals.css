@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f3ead8;
+  --foreground: #2b1d16;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-body), Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 20px;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-4 bg-bordo text-parchment-light border-2 border-bordo font-display text-lg font-bold uppercase tracking-wide transition-colors hover:bg-bordo-dark hover:border-bordo-dark;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-bordo text-bordo font-display text-lg font-bold uppercase tracking-wide transition-colors hover:bg-bordo hover:text-parchment-light;
+  }
+  .ornament {
+    @apply flex items-center justify-center gap-3 text-gold;
+  }
+  .ornament::before,
+  .ornament::after {
+    content: '';
+    @apply h-px w-16 bg-gold/60;
+  }
+}
